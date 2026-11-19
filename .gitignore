@@ -1,0 +1,44 @@
+# --- Private learning and revision documents (repository is PUBLIC) ---
+# These stay on the local machine only. Public docs live in the repo root and docs/.
+private-notes/
+REVISION_NOTES/
+MY_STUDY_NOTES/
+VIVA_PREPARATION/
+PERSONAL_CODE_WALKTHROUGH/
+
+# --- Environment / secrets ---
+.env
+.env.*
+!.env.example
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+*.egg-info/
+
+# --- Node ---
+node_modules/
+frontend/dist/
+coverage/
+
+# --- Local databases and node runtime state (keys, sessions, SQLite files) ---
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+runtime-data/
+local-data/
+local-logs/
+
+# --- Temporary files ---
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
