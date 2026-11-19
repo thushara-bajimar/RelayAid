@@ -22,10 +22,10 @@ from . import crypto
 DEFAULT_PASSPHRASE = "relayaid-demo"  # local demo only; override with RELAYAID_OPERATOR_PASSPHRASE
 
 DEFAULT_NODES = [
-    {"node_id": "hub", "team": "Central Coordination Server", "role": "server", "port": 8000},
-    {"node_id": "alpha", "team": "Rescue Team North", "role": "node", "port": 8001},
-    {"node_id": "bravo", "team": "Rescue Team South", "role": "node", "port": 8002},
-    {"node_id": "charlie", "team": "Relief Coordination Team", "role": "node", "port": 8003},
+    {"node_id": "hub", "team": "Central Coordination Server", "role": "server", "port": 7400},
+    {"node_id": "alpha", "team": "Rescue Team North", "role": "node", "port": 7401},
+    {"node_id": "bravo", "team": "Rescue Team South", "role": "node", "port": 7402},
+    {"node_id": "charlie", "team": "Relief Coordination Team", "role": "node", "port": 7403},
 ]
 
 # Operator accounts created on every field node. The server gets no people-capable account.
