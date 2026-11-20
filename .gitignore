@@ -43,3 +43,6 @@ local-logs/
 Thumbs.db
 .vscode/
 .idea/
+
+# PDF build temp files
+.pdfbuild-*.html

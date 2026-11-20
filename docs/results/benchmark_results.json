@@ -1,0 +1,523 @@
+{
+  "generated_at": "2026-11-20T00:41:35+00:00",
+  "machine": "Windows 11, Python 3.14.6, Intel64 Family 6 Model 186 Stepping 2, GenuineIntel",
+  "E1_payload": [
+    {
+      "events": 10,
+      "initial_sync_ms": 43.2,
+      "initial_wire_bytes": 1770,
+      "initial_raw_bytes": 5221,
+      "wire_bytes_per_event": 177.0,
+      "compression_ratio": 2.95,
+      "batches": 1,
+      "incremental_1_event_wire_bytes": 658,
+      "incremental_events_transferred": 1,
+      "noop_sync_wire_bytes": 321,
+      "noop_sync_ms": 23.5
+    },
+    {
+      "events": 100,
+      "initial_sync_ms": 144.6,
+      "initial_wire_bytes": 12916,
+      "initial_raw_bytes": 50488,
+      "wire_bytes_per_event": 129.2,
+      "compression_ratio": 3.91,
+      "batches": 1,
+      "incremental_1_event_wire_bytes": 657,
+      "incremental_events_transferred": 1,
+      "noop_sync_wire_bytes": 323,
+      "noop_sync_ms": 21.4
+    },
+    {
+      "events": 1000,
+      "initial_sync_ms": 1647.1,
+      "initial_wire_bytes": 129114,
+      "initial_raw_bytes": 507559,
+      "wire_bytes_per_event": 129.1,
+      "compression_ratio": 3.93,
+      "batches": 10,
+      "incremental_1_event_wire_bytes": 667,
+      "incremental_events_transferred": 1,
+      "noop_sync_wire_bytes": 324,
+      "noop_sync_ms": 30.5
+    }
+  ],
+  "E2_convergence": [
+    {
+      "order": "ring",
+      "updates_per_node": 20,
+      "nodes": 3,
+      "trials": 5,
+      "converged": 5,
+      "no_lost_updates": 5,
+      "mean_ms": 316.7,
+      "max_ms": 323.5,
+      "mean_rounds": 2,
+      "mean_events_moved": 120,
+      "mean_wire_kb": 19.2,
+      "mean_open_conflicts": 0.6
+    },
+    {
+      "order": "ring",
+      "updates_per_node": 100,
+      "nodes": 3,
+      "trials": 5,
+      "converged": 5,
+      "no_lost_updates": 5,
+      "mean_ms": 747.5,
+      "max_ms": 896.6,
+      "mean_rounds": 2,
+      "mean_events_moved": 600,
+      "mean_wire_kb": 78.9,
+      "mean_open_conflicts": 1
+    },
+    {
+      "order": "reverse_ring",
+      "updates_per_node": 20,
+      "nodes": 3,
+      "trials": 5,
+      "converged": 5,
+      "no_lost_updates": 5,
+      "mean_ms": 323.0,
+      "max_ms": 327.0,
+      "mean_rounds": 2,
+      "mean_events_moved": 120,
+      "mean_wire_kb": 19.2,
+      "mean_open_conflicts": 0.6
+    },
+    {
+      "order": "reverse_ring",
+      "updates_per_node": 100,
+      "nodes": 3,
+      "trials": 5,
+      "converged": 5,
+      "no_lost_updates": 5,
+      "mean_ms": 789.0,
+      "max_ms": 849.7,
+      "mean_rounds": 2,
+      "mean_events_moved": 600,
+      "mean_wire_kb": 79.0,
+      "mean_open_conflicts": 1
+    },
+    {
+      "order": "star_via_server",
+      "updates_per_node": 20,
+      "nodes": 3,
+      "trials": 5,
+      "converged": 5,
+      "no_lost_updates": 5,
+      "mean_ms": 445.9,
+      "max_ms": 461.4,
+      "mean_rounds": 3,
+      "mean_events_moved": 182,
+      "mean_wire_kb": 28.0,
+      "mean_open_conflicts": 0.6
+    },
+    {
+      "order": "star_via_server",
+      "updates_per_node": 100,
+      "nodes": 3,
+      "trials": 5,
+      "converged": 5,
+      "no_lost_updates": 5,
+      "mean_ms": 1209.2,
+      "max_ms": 1296.2,
+      "mean_rounds": 3,
+      "mean_events_moved": 902,
+      "mean_wire_kb": 115.3,
+      "mean_open_conflicts": 1
+    },
+    {
+      "order": "full_mesh",
+      "updates_per_node": 20,
+      "nodes": 3,
+      "trials": 5,
+      "converged": 5,
+      "no_lost_updates": 5,
+      "mean_ms": 473.1,
+      "max_ms": 507.6,
+      "mean_rounds": 2,
+      "mean_events_moved": 120,
+      "mean_wire_kb": 20.9,
+      "mean_open_conflicts": 0.6
+    },
+    {
+      "order": "full_mesh",
+      "updates_per_node": 100,
+      "nodes": 3,
+      "trials": 5,
+      "converged": 5,
+      "no_lost_updates": 5,
+      "mean_ms": 980.5,
+      "max_ms": 1035.2,
+      "mean_rounds": 2,
+      "mean_events_moved": 600,
+      "mean_wire_kb": 79.8,
+      "mean_open_conflicts": 1
+    }
+  ],
+  "E3_chaos": {
+    "runs": 25,
+    "converged": 25,
+    "no_lost_updates": 25,
+    "conflict_sets_identical": 25,
+    "total_writes": 1043,
+    "total_duplicates_ignored": 1021,
+    "runs_with_open_conflicts": 25,
+    "details": [
+      {
+        "seed": 0,
+        "writes": 34,
+        "converged": true,
+        "no_lost_updates": true,
+        "events": 36,
+        "duplicates_ignored": 23,
+        "conflicts_identical": true,
+        "open_conflicts": 1,
+        "final_ms": 809.8
+      },
+      {
+        "seed": 1,
+        "writes": 49,
+        "converged": true,
+        "no_lost_updates": true,
+        "events": 44,
+        "duplicates_ignored": 0,
+        "conflicts_identical": true,
+        "open_conflicts": 1,
+        "final_ms": 1154.4
+      },
+      {
+        "seed": 2,
+        "writes": 37,
+        "converged": true,
+        "no_lost_updates": true,
+        "events": 39,
+        "duplicates_ignored": 2,
+        "conflicts_identical": true,
+        "open_conflicts": 1,
+        "final_ms": 933.9
+      },
+      {
+        "seed": 3,
+        "writes": 49,
+        "converged": true,
+        "no_lost_updates": true,
+        "events": 46,
+        "duplicates_ignored": 88,
+        "conflicts_identical": true,
+        "open_conflicts": 1,
+        "final_ms": 647.5
+      },
+      {
+        "seed": 4,
+        "writes": 38,
+        "converged": true,
+        "no_lost_updates": true,
+        "events": 39,
+        "duplicates_ignored": 69,
+        "conflicts_identical": true,
+        "open_conflicts": 1,
+        "final_ms": 525.0
+      },
+      {
+        "seed": 5,
+        "writes": 38,
+        "converged": true,
+        "no_lost_updates": true,
+        "events": 38,
+        "duplicates_ignored": 55,
+        "conflicts_identical": true,
+        "open_conflicts": 1,
+        "final_ms": 592.0
+      },
+      {
+        "seed": 6,
+        "writes": 44,
+        "converged": true,
+        "no_lost_updates": true,
+        "events": 38,
+        "duplicates_ignored": 53,
+        "conflicts_identical": true,
+        "open_conflicts": 1,
+        "final_ms": 1126.1
+      },
+      {
+        "seed": 7,
+        "writes": 50,
+        "converged": true,
+        "no_lost_updates": true,
+        "events": 42,
+        "duplicates_ignored": 0,
+        "conflicts_identical": true,
+        "open_conflicts": 1,
+        "final_ms": 497.4
+      },
+      {
+        "seed": 8,
+        "writes": 47,
+        "converged": true,
+        "no_lost_updates": true,
+        "events": 49,
+        "duplicates_ignored": 0,
+        "conflicts_identical": true,
+        "open_conflicts": 1,
+        "final_ms": 958.6
+      },
+      {
+        "seed": 9,
+        "writes": 34,
+        "converged": true,
+        "no_lost_updates": true,
+        "events": 31,
+        "duplicates_ignored": 45,
+        "conflicts_identical": true,
+        "open_conflicts": 1,
+        "final_ms": 917.8
+      },
+      {
+        "seed": 10,
+        "writes": 41,
+        "converged": true,
+        "no_lost_updates": true,
+        "events": 43,
+        "duplicates_ignored": 25,
+        "conflicts_identical": true,
+        "open_conflicts": 1,
+        "final_ms": 981.5
+      },
+      {
+        "seed": 11,
+        "writes": 45,
+        "converged": true,
+        "no_lost_updates": true,
+        "events": 47,
+        "duplicates_ignored": 90,
+        "conflicts_identical": true,
+        "open_conflicts": 1,
+        "final_ms": 1189.6
+      },
+      {
+        "seed": 12,
+        "writes": 44,
+        "converged": true,
+        "no_lost_updates": true,
+        "events": 46,
+        "duplicates_ignored": 83,
+        "conflicts_identical": true,
+        "open_conflicts": 1,
+        "final_ms": 1395.1
+      },
+      {
+        "seed": 13,
+        "writes": 42,
+        "converged": true,
+        "no_lost_updates": true,
+        "events": 43,
+        "duplicates_ignored": 0,
+        "conflicts_identical": true,
+        "open_conflicts": 1,
+        "final_ms": 496.1
+      },
+      {
+        "seed": 14,
+        "writes": 46,
+        "converged": true,
+        "no_lost_updates": true,
+        "events": 40,
+        "duplicates_ignored": 34,
+        "conflicts_identical": true,
+        "open_conflicts": 1,
+        "final_ms": 707.3
+      },
+      {
+        "seed": 15,
+        "writes": 40,
+        "converged": true,
+        "no_lost_updates": true,
+        "events": 38,
+        "duplicates_ignored": 50,
+        "conflicts_identical": true,
+        "open_conflicts": 1,
+        "final_ms": 607.6
+      },
+      {
+        "seed": 16,
+        "writes": 43,
+        "converged": true,
+        "no_lost_updates": true,
+        "events": 32,
+        "duplicates_ignored": 49,
+        "conflicts_identical": true,
+        "open_conflicts": 1,
+        "final_ms": 446.4
+      },
+      {
+        "seed": 17,
+        "writes": 50,
+        "converged": true,
+        "no_lost_updates": true,
+        "events": 44,
+        "duplicates_ignored": 61,
+        "conflicts_identical": true,
+        "open_conflicts": 1,
+        "final_ms": 1081.6
+      },
+      {
+        "seed": 18,
+        "writes": 33,
+        "converged": true,
+        "no_lost_updates": true,
+        "events": 29,
+        "duplicates_ignored": 32,
+        "conflicts_identical": true,
+        "open_conflicts": 1,
+        "final_ms": 472.8
+      },
+      {
+        "seed": 19,
+        "writes": 36,
+        "converged": true,
+        "no_lost_updates": true,
+        "events": 38,
+        "duplicates_ignored": 42,
+        "conflicts_identical": true,
+        "open_conflicts": 1,
+        "final_ms": 963.9
+      },
+      {
+        "seed": 20,
+        "writes": 35,
+        "converged": true,
+        "no_lost_updates": true,
+        "events": 37,
+        "duplicates_ignored": 70,
+        "conflicts_identical": true,
+        "open_conflicts": 1,
+        "final_ms": 679.8
+      },
+      {
+        "seed": 21,
+        "writes": 41,
+        "converged": true,
+        "no_lost_updates": true,
+        "events": 41,
+        "duplicates_ignored": 5,
+        "conflicts_identical": true,
+        "open_conflicts": 1,
+        "final_ms": 1046.7
+      },
+      {
+        "seed": 22,
+        "writes": 40,
+        "converged": true,
+        "no_lost_updates": true,
+        "events": 42,
+        "duplicates_ignored": 66,
+        "conflicts_identical": true,
+        "open_conflicts": 1,
+        "final_ms": 688.9
+      },
+      {
+        "seed": 23,
+        "writes": 42,
+        "converged": true,
+        "no_lost_updates": true,
+        "events": 44,
+        "duplicates_ignored": 79,
+        "conflicts_identical": true,
+        "open_conflicts": 1,
+        "final_ms": 1275.0
+      },
+      {
+        "seed": 24,
+        "writes": 45,
+        "converged": true,
+        "no_lost_updates": true,
+        "events": 40,
+        "duplicates_ignored": 0,
+        "conflicts_identical": true,
+        "open_conflicts": 1,
+        "final_ms": 572.3
+      }
+    ]
+  },
+  "E4_allocation": {
+    "attempts": 267,
+    "accepted": 51,
+    "blocked": 216,
+    "token_transfers": 0,
+    "releases": 6,
+    "forged_events_injected": 10,
+    "forged_events_rejected_by_every_replica": 10,
+    "audit_ok_on_all_nodes": true,
+    "boat_active_allocations": 1,
+    "kits_reserved": 300,
+    "kits_total": 300,
+    "kits_never_overallocated": true,
+    "allocations_blocked_counter": 232
+  },
+  "E5_duplicates": {
+    "events": 200,
+    "converged": true,
+    "duplicates_ignored": 400,
+    "needs_per_node": [
+      200,
+      200,
+      200
+    ]
+  },
+  "E6_lossy": [
+    {
+      "drop_rate": 0.1,
+      "trials": 5,
+      "converged": 5,
+      "sessions": 60,
+      "session_success_rate": 1.0,
+      "retries": 23
+    },
+    {
+      "drop_rate": 0.3,
+      "trials": 5,
+      "converged": 5,
+      "sessions": 60,
+      "session_success_rate": 0.95,
+      "retries": 70
+    },
+    {
+      "drop_rate": 0.5,
+      "trials": 5,
+      "converged": 5,
+      "sessions": 66,
+      "session_success_rate": 0.803,
+      "retries": 157
+    }
+  ],
+  "E7_rebuild": [
+    {
+      "events": 100,
+      "rebuild_ms_median": 9.6,
+      "local_write_ms_incl_rebuild": 20.4
+    },
+    {
+      "events": 1000,
+      "rebuild_ms_median": 109.7,
+      "local_write_ms_incl_rebuild": 113.7
+    },
+    {
+      "events": 3000,
+      "rebuild_ms_median": 311.8,
+      "local_write_ms_incl_rebuild": 859.2
+    }
+  ],
+  "E8_processes": {
+    "transport": "real HTTP over loopback, 4 OS processes",
+    "updates_per_node": 50,
+    "local_writes_total": 150,
+    "mean_local_write_ms": 8.36,
+    "converged": true,
+    "rounds": 2,
+    "convergence_ms": 394.3,
+    "wire_kb": 40.6
+  }
+}

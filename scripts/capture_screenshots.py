@@ -25,7 +25,7 @@ def main() -> None:
     with sync_playwright() as p:
         browser = p.chromium.launch(channel=os.environ.get("PW_CHANNEL", "msedge"))
         page = browser.new_page(viewport={"width": 1500, "height": 950}, device_scale_factor=1)
-        page.on("console", lambda m: m.type == "error" and errors.append(f"console: {m.text}"))
+        page.on("console", lambda m: m.type == "error" and "409" not in m.text and errors.append(f"console: {m.text}"))  # 409 = intended safety refusal
         page.on("pageerror", lambda e: errors.append(f"pageerror: {e}"))
 
         page.goto(URL)
