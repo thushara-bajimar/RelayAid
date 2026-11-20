@@ -1,0 +1,9 @@
+FROM python:3.12-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY backend/ backend/
+COPY scripts/ scripts/
+ENV PYTHONPATH=/app/backend
+# The node id is chosen per service in docker-compose.yml
+CMD ["python", "-m", "relayaid.serve", "--node", "alpha", "--runtime", "/data", "--host", "0.0.0.0"]

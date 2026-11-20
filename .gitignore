@@ -32,6 +32,7 @@ coverage/
 *.sqlite
 *.sqlite3
 runtime-data/
+runtime-docker/
 local-data/
 local-logs/
 

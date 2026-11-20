@@ -1,0 +1,48 @@
+# RelayAid on Docker Compose: one container (and one data volume) per node.
+#   docker compose run --rm bootstrap      # once: keys, roster, operator accounts
+#   docker compose up --build
+# Dashboard: http://localhost:8080   (demo passphrase: relayaid-demo unless overridden)
+# Note: written for portability; the reference environment for this project ran the
+# nodes as plain processes (scripts/run_cluster.py) because Docker was not installed.
+
+x-node: &node
+  build: { context: ., dockerfile: deploy/Dockerfile.backend }
+  restart: unless-stopped
+  environment:
+    RELAYAID_SESSION_MINUTES: "60"
+
+services:
+  bootstrap:
+    <<: *node
+    restart: "no"
+    profiles: ["setup"]
+    environment:
+      RELAYAID_OPERATOR_PASSPHRASE: ${RELAYAID_OPERATOR_PASSPHRASE:-relayaid-demo}
+    volumes: [ "./runtime-docker:/data" ]
+    command: ["python", "scripts/bootstrap.py", "--docker", "--runtime", "/data"]
+
+  hub:
+    <<: *node
+    # only this node's private directory plus the public roster are mounted
+    volumes: [ "./runtime-docker/deployment.json:/data/deployment.json:ro", "./runtime-docker/hub:/data/hub" ]
+    command: ["python", "-m", "relayaid.serve", "--node", "hub", "--runtime", "/data", "--host", "0.0.0.0"]
+  alpha:
+    <<: *node
+    # only this node's private directory plus the public roster are mounted
+    volumes: [ "./runtime-docker/deployment.json:/data/deployment.json:ro", "./runtime-docker/alpha:/data/alpha" ]
+    command: ["python", "-m", "relayaid.serve", "--node", "alpha", "--runtime", "/data", "--host", "0.0.0.0"]
+  bravo:
+    <<: *node
+    # only this node's private directory plus the public roster are mounted
+    volumes: [ "./runtime-docker/deployment.json:/data/deployment.json:ro", "./runtime-docker/bravo:/data/bravo" ]
+    command: ["python", "-m", "relayaid.serve", "--node", "bravo", "--runtime", "/data", "--host", "0.0.0.0"]
+  charlie:
+    <<: *node
+    # only this node's private directory plus the public roster are mounted
+    volumes: [ "./runtime-docker/deployment.json:/data/deployment.json:ro", "./runtime-docker/charlie:/data/charlie" ]
+    command: ["python", "-m", "relayaid.serve", "--node", "charlie", "--runtime", "/data", "--host", "0.0.0.0"]
+
+  dashboard:
+    build: { context: ., dockerfile: deploy/Dockerfile.frontend }
+    ports: [ "8080:80" ]
+    depends_on: [ hub, alpha, bravo, charlie ]
