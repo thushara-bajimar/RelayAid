@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/* System font stack on purpose: the dashboard must render with no internet access. */
+@theme {
+  --font-sans: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Cascadia Mono", "Consolas", ui-monospace, monospace;
+  --color-alpha: #2a78d6;
+  --color-bravo: #eb6834;
+  --color-charlie: #1baf7a;
+  --color-hub: #64748b;
+}
+
+:root { color-scheme: light; }
+body { background: #f4f6f9; color: #0f172a; }
+.mono { font-family: var(--font-mono); }
