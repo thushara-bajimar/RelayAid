@@ -72,7 +72,7 @@ export default function Analytics() {
         <div className="grid grid-cols-2 gap-3 md:grid-cols-4 xl:grid-cols-8">
           <Stat label="Sync success" value={m.success_rate == null ? "-" : `${(m.success_rate * 100).toFixed(0)}%`} hint={NODE_META[node].label} />
           <Stat label="Avg session" value={m.avg_session_ms ? `${m.avg_session_ms} ms` : "-"} />
-          <Stat label="Bytes / event" value={m.avg_bytes_per_event ?? "-"} hint="on the wire" />
+          <Stat label="Bytes / event" value={m.avg_bytes_per_event ?? "-"} hint="wire total ÷ events moved (incl. handshakes)" />
           <Stat label="Compression" value={m.compression_ratio ? `${m.compression_ratio}×` : "-"} />
           <Stat label="Duplicates handled" value={sum("duplicate_events_ignored")} hint="all nodes" />
           <Stat label="Allocations blocked" value={sum("allocations_blocked")} hint="all nodes" />
